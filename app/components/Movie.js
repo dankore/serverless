@@ -12,7 +12,7 @@ function Movie() {
     async function sendRequest() {
       setIsLoading(true);
       const response = await Axios.get(
-        `https://serverlezz.netlify.app/.netlify/functions/lambda`,
+        `https://serverlezz.netlify.app/.netlify/functions/movie`,
         { cancelToken: ourRequest.token }
       );
       setMovie(response.data);
