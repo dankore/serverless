@@ -1,0 +1,44 @@
+{
+  "name": "client-side-routing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app/Main.js",
+  "scripts": {
+    "start": "cross-env NODE_ENV=development npm-run-all --parallel start:app start:server",
+    "start:app": "webpack-dev-server",
+    "start:server": "netlify-lambda serve ./app/functions",
+    "build": "cross-env NODE_ENV=production npm-run-all --parallel build:**",
+    "build:app": "cross-env NODE_ENV=production webpack",
+    "build:functions": "cross-env NODE_ENV=production netlify-lambda build ./app/functions"
+  },
+  "proxy": "http://127.0.0.1:9000",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.12.3",
+    "@babel/preset-env": "^7.12.1",
+    "@babel/preset-react": "^7.12.1",
+    "axios": "^0.21.0",
+    "babel-loader": "^8.1.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "core-js": "^3.6.5",
+    "cross-env": "^7.0.2",
+    "dotenv": "^8.2.0",
+    "dotenv-webpack": "^5.1.0",
+    "fs-extra": "^9.0.1",
+    "html-webpack-harddisk-plugin": "^1.0.2",
+    "html-webpack-plugin": "^4.5.0",
+    "netlify-lambda": "^2.0.1",
+    "npm-run-all": "^4.1.5",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
+    "regenerator-runtime": "^0.13.7"
+  },
+  "devDependencies": {
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.11.0"
+  }
+}
